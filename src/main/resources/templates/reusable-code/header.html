@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Home Page</title>
+    <link th:href="@{/CSS/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/CSS/bank.css?v=2.0}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/JS/bootstrap.bundle.min.js?v=2.0}"></script>
+<style>
+
+		body {
+			background-color: #f9f9f9; /* Light gray background for the whole page */
+	}
+		.header {
+			background-color: white; /* White background for the header */
+		color: black;
+		padding: 15px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	}
+		h2.ts {
+		margin: 0; /* Remove default margin */
+		font-size: 2rem; /* Increase header size */
+	}
+		.fs-5, .fs-6 {
+		margin: 5px 0; /* Add spacing between text elements */
+	}
+		.logout-link {
+			text-decoration: none; /* Remove underline from link */
+		color: #dc3545; /* Bootstrap danger color for logout */
+	}
+		.logout-link:hover {
+			text-decoration: underline; /* Underline on hover for clarity */
+	}
+</style>
+	<script>
+/*let timeout;
+function resetTimer() {
+    clearTimeout(timeout);
+    timeout = setTimeout(logoutUser, 20 * 1000); // seconds
+}
+function logoutUser() {
+    alert("Your session has expired due to inactivity. You will be logged out.");
+    window.location.href = "/janta-bank/sessionExpired"; // Redirect to session expired page
+}
+// Detect user activity
+window.onload = resetTimer;
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
+document.onclick = resetTimer;
+document.onscroll = resetTimer;*/
+</script>
+</head>
+<!--<div class="header" style="background-color: transparent;color: black;">-->
+<!--	<div class="row">-->
+<!--		<div class='col-3'>-->
+<!--			<span class='fs-5 text-dark'>Savings Account</span><br> <span-->
+<!--				class='fs-6' th:text="${session.accountno}"></span>-->
+<!--		</div>-->
+<!--		<div class='col-3'>-->
+<!--			<p class='fs-3'><h2 class="ts">-->
+<!--			Hex Bank-->
+<!--		</h2></p>-->
+<!--		</div>-->
+<!--		<div class='col-3'>-->
+<!--			<span class='fs-5 text-dark'  >Your Name</span><br> <span-->
+<!--				class='fs-6' th:text="${session.username}"></span>-->
+<!--		</div>-->
+<!--		<div class='col-3'>-->
+<!--			<a href="logout.do" class='fs-6 text-dark' >Logout</a>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+<div class="header">
+	<div class="row">
+		<div class='col-3'>
+			<span class='fs-5'>Savings Account</span><br> <span class='fs-6' th:text="${session.accountno}"></span>
+		</div>
+		<div class='col-6 text-center'>
+			<h2 class="ts">Hex Bank</h2>
+		</div>
+		<div class='col-3 text-end'>
+			<span class='fs-5'></span><br> <span class='fs-6' th:text="${session.username}"></span><br>
+			<a href="/corexfin/logout.do" class='logout-link'>Logout</a>
+		</div>
+	</div>
+</div>
+
